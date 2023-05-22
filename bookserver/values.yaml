@@ -1,0 +1,24 @@
+replicaCount: 1
+
+deploymentLabels:
+  app: bookserver
+  run: app
+
+containerLabels:
+  app: bookserver
+  run: app
+
+matchLabels:
+  app: bookserver
+  run: app
+
+containerSpec:
+  name: BookServer
+  image: souravbiswassanto/bookserver
+  port: 8081
+
+service:
+  type: NodePort
+  port: 3200
+  nodePort: 30018
+  protocol: TCP
